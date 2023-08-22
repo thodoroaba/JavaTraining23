@@ -6,6 +6,7 @@ public class Client {
     }
 
 
-
-
+    public void notifyClient(Pizza pizza) {
+        System.out.println("Pizza is baked");
+    }
 }

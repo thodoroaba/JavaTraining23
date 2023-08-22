@@ -29,7 +29,16 @@ public class PizzaFactory {
 
     }
 
+    public void bake(Pizza pizza){
+        pizza.bake();
+        for (Client client : clients){
+            client.notifyClient(pizza);
+        }
+    }
+
     public void attachObserver(Client client){
         this.clients.add(client);
     }
+
+
 }
