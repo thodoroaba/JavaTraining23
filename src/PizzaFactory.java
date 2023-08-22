@@ -1,5 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class PizzaFactory {
     private static PizzaFactory instance;
+
+    private List<Client> clients = new ArrayList<>();
     private PizzaFactory(){}
     public static PizzaFactory getInstance(){
         if (instance == null) {
@@ -22,5 +27,9 @@ public class PizzaFactory {
         return pizza;
 
 
+    }
+
+    public void attachObserver(Client client){
+        this.clients.add(client);
     }
 }
