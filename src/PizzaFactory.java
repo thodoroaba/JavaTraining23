@@ -7,7 +7,19 @@ public class PizzaFactory {
         }
         return instance;
     }
-    public Pizza createPizza(){
-        return null;
+    public Pizza createPizza(PizzaType type) throws Exception {
+        Pizza pizza;
+        switch(type) {
+            case DIAVOLA:
+                pizza = new DiavolaPizza();
+                break;
+            case HAWAIIAN:
+                pizza = new HawaiianPizza();
+                break;
+                default:
+                    throw new Exception("No such pizza!");
+        }
+        return pizza;
+
     }
 }
