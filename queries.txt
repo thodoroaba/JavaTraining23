@@ -28,3 +28,23 @@ CREATE TABLE social_network.tweet (
 insert into social_network.tweet (id, body, likes, posted_on, user_id)
 values ('d9386927-fde0-47a2-97b8-0a8800886156', 'Tesla Stocks will be down today!!',
 10000, 1692775749237, 'e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3');
+
+insert into social_network.tweet (id, body, likes, posted_on, user_id)
+values ('9af46994-4187-11ee-be56-0242ac120002', 'Roblox rules!',
+999, 1692776146530, 'b0253205-14a2-4661-8178-dd912dc27b8d');
+
+insert into social_network.tweet (id, body, likes, posted_on, user_id)
+values ('e7f6851a-4187-11ee-be56-0242ac120002', 'Just kiddin',
+1000, 1692776264070, 'e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3');
+
+select * from social_network.tweet;
+
+select * from social_network.user 
+inner join social_network.tweet
+on social_network.user.id = social_network.tweet.user_id
+where social_network.user.id = 'e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3';
+
+
+
+
+
