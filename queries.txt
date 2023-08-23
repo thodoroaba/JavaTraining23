@@ -44,7 +44,17 @@ inner join social_network.tweet
 on social_network.user.id = social_network.tweet.user_id
 where social_network.user.id = 'e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3';
 
+CREATE TABLE social_network.follower (
+	id varchar(36) NOT NULL,
+    follow_date long,
+    follower VARCHAR(36) NOT NULL,
+    following VARCHAR(36) NOT NULL,
+    FOREIGN KEY (follower) REFERENCES social_network.user(id),
+    FOREIGN KEY (following) REFERENCES social_network.user(id)
+);
 
+-- select * from social_network.follower;
+insert into social_network.follower(id, follow_date, follower, following) values ( '9bed4949-608c-4f9f-96e1-73f1a3356f6d', 1692777944835, 'b0253205-14a2-4661-8178-dd912dc27b8d','e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3');
 
 
 
