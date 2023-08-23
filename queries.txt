@@ -56,5 +56,15 @@ CREATE TABLE social_network.follower (
 -- select * from social_network.follower;
 insert into social_network.follower(id, follow_date, follower, following) values ( '9bed4949-608c-4f9f-96e1-73f1a3356f6d', 1692777944835, 'b0253205-14a2-4661-8178-dd912dc27b8d','e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3');
 
+insert into social_network.follower(id, follow_date, follower, following) values ( '9bed4949-608c-4f9f-96e1-73f1a3356f6d', 1692777944835, 'b0253205-14a2-4661-8178-dd912dc27b8d','13755a0b-b8fe-4e58-aa98-e04c792e66fc');
+insert into social_network.follower(id, follow_date, follower, following) values ( '8ab0d17a-feae-486f-a443-e4821050ef46', 1692778505924, 'b0253205-14a2-4661-8178-dd912dc27b8d','e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3');
 
+select * from social_network.user
+inner join social_network.follower
+on social_network.user.id = social_network.follower.following
+where social_network.follower.follower = 'b0253205-14a2-4661-8178-dd912dc27b8d';
+
+select * from follower;
+
+delete from follower where id = '9bed4949-608c-4f9f-96e1-73f1a3356f6d';
 
