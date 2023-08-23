@@ -1,3 +1,4 @@
+
 CREATE TABLE social_network.user (
 	id varchar(36) NOT NULL,
     username varchar(255),
@@ -7,10 +8,23 @@ CREATE TABLE social_network.user (
     registered_on long,
     PRIMARY KEY (id)
 );
-
 insert into user(id, username, password, profile_pic, email_address, registered_on)
 values('e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3', 'Andrei2456', 'password', 'profile_pic_base64', 'andrei.ionut@gmail.com', 1692774832705);
 insert into user(id, username, password, profile_pic, email_address, registered_on)
 values('13755a0b-b8fe-4e58-aa98-e04c792e66fc', 'George4325', 'Fox25.', 'profile_pic_base64', 'george@gmail.com', 1692775009139);
 insert into user(id, username, password, profile_pic, email_address, registered_on)
 values('b0253205-14a2-4661-8178-dd912dc27b8d', 'Catalin31', 'parola', 'profile_pic_base64', 'catalin@gmail.com', 1692775009139);
+
+CREATE TABLE social_network.tweet (
+	id varchar(36) NOT NULL,
+    body text NOT NULL,
+    likes int,
+    posted_on long,
+    user_id varchar(36) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES social_network.user (id)
+);
+
+insert into social_network.tweet (id, body, likes, posted_on, user_id)
+values ('d9386927-fde0-47a2-97b8-0a8800886156', 'Tesla Stocks will be down today!!',
+10000, 1692775749237, 'e8f4ed1a-53c1-4ae8-9103-bf64a7427dd3');
