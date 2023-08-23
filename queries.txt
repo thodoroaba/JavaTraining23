@@ -1,0 +1,9 @@
+CREATE TABLE social_network.user (
+	id varchar(36) NOT NULL,
+    username varchar(255),
+    password varchar(255),
+    profile_pic text,
+    email_address varchar(255),
+    registered_on long,
+    PRIMARY KEY (id)
+);
